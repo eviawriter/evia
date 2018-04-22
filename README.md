@@ -9,3 +9,5 @@ whole writing process a lot easier, just by sorting stuff in
 a logical and easy to use order. 
 
 This app is in its infancy and needs a lot of work to be done.
+It's being build with Electron+sqlite, so it must be good :)
+
