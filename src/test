@@ -1,0 +1,106 @@
+<div class="container">
+  <header>
+    <!-- Header content -->
+  </header>
+
+  <nav>
+    <!-- Navigation -->
+  </nav>
+
+  <main>
+    <!-- Main content -->
+  </main>
+
+  <aside>
+    <!-- Sidebar / Ads -->
+  </aside>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+</div>
+
+
+     
+
+            <div class="header">
+            <div id="price-container">
+                <p class="subtext">Current BTC USD</p>
+                <h1 id="price">loading...</h1>
+            </div>
+            <div id="goal-container">
+                <p><img src="../assets/images/up.svg"><span id="targetPrice">Choose a Target Price</span></p>
+            </div>
+            <div id="right-container">
+                <button id="notifyBtn">Notify me when..</button>
+            </div>
+        </div>
+
+        <div class="center">
+            <div id="left2">
+                <p class="subtext">links</p> 
+            </div>
+            <div id="middle2">
+                <script>
+                var quill = new Quill('#editor', {
+                    modules: { toolbar: true },
+                    theme: 'snow'
+                  });
+                </script>
+            </div>
+            <div id="right2">
+                <p class="subtext">rechts</p>
+            </div>
+        </div>
+
+        <div class="footer">
+                <div id="left3">
+                    <p class="subtext">links</p> 
+                </div>
+                <div id="middle3">
+                    <p class="subtext">midden</p>
+                </div>
+                <div id="right3">
+                    <p class="subtext">rechts</p>
+                </div>
+            </div>
+
+
+
+            ---------------------
+
+
+figure.nav1 {
+    /* To correctly align image, regardless of content height: */
+    display: inline-block;
+    margin: 10px 15px;
+    /* To horizontally center images and caption */
+    text-align: center;
+    /* The width of the container also implies margin around the images. */
+}
+
+figure.nav1 a {
+    display: inline-block;
+    color: white;
+}
+
+figure.nav1 a:hover {
+    color: black;
+}
+
+img {
+    width: 35px;
+    height: 35px;
+}
+
+.caption {
+    /* Make the caption a block so it occupies its own line. */
+    display: block;
+    font-size: 0.7em;
+
+}
+
+.caption a:hover {
+    background: #FFF;
+}
+*/

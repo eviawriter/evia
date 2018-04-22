@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600');
+
+/* Beginning of the css */
+
+body {
+    background: #262626;
+    color:#FFF;
+    font-family: 'Montserrat';
+    margin:0;
+    height: 100%;
+}
+
+/* Creating the grid (3x3) */
+.container {
+    display: grid;
+  
+    grid-template-areas:
+      "logo nav search"
+      "left content right"
+      "leftfooter content rightfooter";
+  
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: 75px 1fr 40px;
+    height: 100vh;    
+  }
+
+/* header section */
+logo {
+    grid-area: logo;
+    background: #353535;
+    width: 100%;
+    padding: 0px 0px;
+    border-bottom: 3px solid rgb(37, 211, 2);
+}
+
+/* navigation made difficult. Maybe I should fix this. */
+nav {
+    grid-area: nav;
+    padding: 0px 0px;
+    width: 100%;
+    background-color: #353535;
+}
+
+.icon-bar {
+    display: inline-block;
+    width: 100%;
+    height: 75px;
+    overflow: hidden;
+}
+
+#waydown {
+    position: relative;
+    top: 50px;
+}
+
+.story a {
+    display: block;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    width: 80px;
+    height: 72px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid rgb(37, 211, 2);
+    background-image: url('../../images/menu-items/story-w.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+}
+
+.story a:hover {
+    color: black;
+    background: url('../../images/menu-items/story-b.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+    background-color: #FFF;
+} 
+
+.characters a {
+    display: block;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    width: 80px;
+    height: 72px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid rgb(37, 211, 2);
+    background-image: url('../../images/menu-items/characters-w.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+} 
+
+.characters a:hover {
+    color: black;
+    background: url('../../images/menu-items/characters-b.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+    background-color: #FFF;
+}
+
+.locations a {
+    display: block;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    width: 80px;
+    height: 72px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid rgb(37, 211, 2);
+    background-image: url('../../images/menu-items/locations-w.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+} 
+
+.locations a:hover {
+    color: black;
+    background: url('../../images/menu-items/locations-b.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+    background-color: #FFF;
+}
+
+.ideas a {
+    display: block;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    width: 80px;
+    height: 72px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid rgb(37, 211, 2);
+    background-image: url('../../images/menu-items/ideas-w.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+} 
+
+.ideas a:hover {
+    color: black;
+    background: url('../../images/menu-items/ideas-b.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+    background-color: #FFF;
+}
+
+.research a {
+    display: block;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    width: 80px;
+    height: 72px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid rgb(37, 211, 2);
+    background-image: url('../../images/menu-items/research-w.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+} 
+
+.research a:hover {
+    color: black;
+    background: url('../../images/menu-items/research-b.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+    background-color: #FFF;
+}
+
+.keywords a {
+    display: block;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    width: 80px;
+    height: 72px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid rgb(37, 211, 2);
+    background-image: url('../../images/menu-items/keywords-w.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+} 
+
+.keywords a:hover {
+    color: black;
+    background: url('../../images/menu-items/keywords-b.png');
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+    background-size: 35px;
+    background-color: #FFF;
+}
+
+.icon-bar .filler {
+    display: block;
+    width: 100%;
+    height: 72px;
+    border-bottom: 3px solid rgb(37, 211, 2);    
+}
+
+/* Searchbar in development */
+search {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 3px solid rgb(37, 211, 2);
+    background:#353535;
+}
+
+search input[type=text] {
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid black;
+    height: 25px;
+    width: 125px;
+    padding: 0px 5px;
+}
+
+/* Left navigation (chapters e.a.) */
+left {
+    grid-area: left;
+    padding: 0px 0px 20px 0px;
+    background: #3f3f3f;
+    text-align: center;
+    overflow-y: auto;
+    }
+
+/* making the left navigation even better */
+.chapters {
+    display: block;
+    padding: 0px 0px 10px 15px;
+    text-align: left;
+}
+
+.chapters a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.chapters a:hover {
+    display: block;
+    background-color: white;
+    color: black;
+}
+
+#subchapter ul {
+    list-style-type: none;
+    margin: 0px 5px;
+    padding: 0px 5px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+#subchapter li a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#subchapter li a:hover {
+    display: block;
+    background-color: white;
+    color: black;
+}
+
+/* Main content area */
+content {
+    grid-area: content;
+    overflow-y: auto;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: span 3;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0); 
+    }
+
+/* right navigation section (statistics e.a.) */
+    right { 
+    grid-area: right;
+    background: #3f3f3f;
+    padding: 0px;
+    border-left: 1px solid rgb(0, 0, 0);
+    text-align: center;
+    }
+
+/* Left footer section (options, trash, add) */
+.leftfooter {
+    grid-area: leftfooter;
+    display: grid;
+    grid-template-columns: 0.1fr 0.1fr 1fr;
+    background:#3f3f3f;
+    padding: 0px 5px;
+    grid-gap: 5px;
+} 
+
+.leftfooter img {
+    width: 30px;
+}
+
+#options {
+    border: 0px solid #fff;
+    padding: 0px 10px;
+    margin: 0;
+} 
+
+#trash {
+    border: 0px solid #fff;
+    padding: 0px;
+    margin: 0;
+} 
+
+#add {
+    border: 0px solid #fff;
+    padding: 0px 10px;
+    margin: 0;
+    text-align: right;
+} 
+
+/* Right footer (keywords, distractionfree, add)  */
+.rightfooter {
+    grid-area: rightfooter;
+    display: grid;
+    grid-template-columns: 0.1fr 0.1fr 1fr;
+    background: #3f3f3f;
+    border-left: 1px solid rgb(0, 0, 0);
+    padding: 0 5px;
+}
+     
+.rightfooter img {
+    width: 30px;
+}
+    
+#keywords {
+    border: 0px solid #fff;
+    padding: 0px 10px;
+    margin: 0;
+} 
+    
+#distractionfree {
+    border: 0px solid #fff;
+    padding: 0px;
+    margin: 0;
+} 
+    
+#add2 {
+    border: 0px solid #fff;
+    padding: 0px 10px;
+    margin: 0;
+    text-align: right;
+}
+
+/* Button section (meaning, every button available) */
+button {
+    background:rgb(37, 211, 2);
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid black;
+    height: 27px;
+    color:#fff;
+    text-transform:uppercase;
+    cursor:pointer;
+    padding: 5px 5px;
+}
+
+/* Quill section (toolbar, editor) */
+#toolbar { 
+    display: flex;
+    align-items: center;
+    min-width: 500px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#editor {
+    color: #000;
+    height: 93%;
+    min-width: 500px;
+    max-width: 1000px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+} 
+
+#editor .ql-editor {
+    font-size: 18px;
+    font-family: "Georgia, serif";
+
+}
+  
+/* Set dropdown font-families */
+#toolbar .ql-font span[data-label="Georgia, serif"]::before {
+    font-family: "Georgia, serif";
+  }
+#toolbar .ql-font span[data-label="Sans-serif"]::before {
+    font-family: "sans-serif";
+  }
+#toolbar .ql-font span[data-label="monospace"]::before {
+    font-family: "monospace";
+  }
+  
+  /* Set content font-families */
+  .ql-font-georgia-serif {
+      font-family: "Georgia, serif";
+  }
+  
+  .ql-font-sans-serif {
+    font-family: "sans-serif";
+  }
+  .ql-font-sans-roboto {
+    font-family: "monospace";
+  }
+
+/* set the headers, because why not? */
+h1 {
+    margin: 0 0 10px 0;
+}
+
+h2 {
+    font-size: 14px;
+}
+
+h3 {
+    font-size: 14px;
+    font-style: italic;
+}
+
+h4 {
+    font-size: 30px;
+    text-align: center;
+    margin: 15px 15px;
+}
+
+/* same formatting for the headers (left & right */
+.headers {
+    display: block;
+    background: #353535;
+    width: 100%;
+    height: 20px;
+    padding: 5px 0px;
+    font-size: 12px;
+    text-transform:uppercase;   
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
