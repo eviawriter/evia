@@ -1,9 +1,25 @@
 <!DOCTYPE html>
   <html>
     <head>
+            <script>
+                    const electron = require("electron");
+                    const ipc = electron.ipcRenderer;
+                    document.addEventListener("DOMContentLoaded", function(){
+                        ipc.send("mainWindowLoaded")
+                        ipc.on("resultSent", function(evt, result){
+                            let resultEl = document.getElementById("chapters");
+                            console.log(result);
+                            for(var i = 0; i < result.length;i++){
+                                chaptersEl.innerHTML += "<h2>" + result[i].chapter.toString() + "</h2>";
+                            }
+                        });
+                    });
+                </script>
+      
       <link rel="stylesheet" href="../assets/css/main.css">
       <meta charset="UTF-8">
       <title>Evia Writer - writing is life</title>
+      
     </head>
     <body>
 
@@ -20,10 +36,10 @@
 
             <!-- Navigation -->
             <nav> 
-                      
+                <link rel="stylesheet" href="../assets/css/main.css">      
                 <div class="icon-bar">                         
                             <div class="story">
-                                <a href="#"><div id="waydown">Story</div></a>
+                                 <a href="#"><div id="waydown">Story</div></a>
                             </div>                                                    
                             <div class="characters">
                                 <a href="#"><div id="waydown">Characters</div></a>
@@ -61,8 +77,9 @@
                     Main menu
                 </div>
    
-                <div class="chapters">
-                    <h2><a href="#">1. Balu de bruine beer</a></h2>
+                <div id="chapters">
+                
+                    <!-- <h2><a href="#">1. Balu de bruine beer</a></h2> -->
                     <div id="subchapter">
                         <ul>
                             <li><a href="#">Een beer</a></li>
@@ -216,7 +233,7 @@
         </div>
                   
        
-        <script src="index.js"></script>
+      
     
     </body>
 

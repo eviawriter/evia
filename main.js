@@ -1,9 +1,9 @@
 require('electron-reload')(__dirname)
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
 const url = require('url')
 const ipc = require('electron').ipcMain
-
+const sqlite3 = require('sqlite3').verbose();
 
   // Keep a global reference of the window object, if you don't, the window will
   // be closed automatically when the JavaScript object is garbage collected.
@@ -11,15 +11,16 @@ const ipc = require('electron').ipcMain
   
   function createWindow () {
     // Create the browser window.
-    win = new BrowserWindow({width: 1200, height: 800})
+    win = new BrowserWindow({width: 1200, height: 800, show: true, icon: path.join(__dirname, 'assets/icons/png/64x64.png') })
   
     // and load the index.html of the app.
     win.loadURL(url.format({
       pathname: path.join(__dirname, 'src/index.html'),
       protocol: 'file:',
-      slashes: true
+      slashes: true    
     }))
   
+
     // Open the DevTools.
     // win.webContents.openDevTools()
   
@@ -35,8 +36,15 @@ const ipc = require('electron').ipcMain
   // This method will be called when Electron has finished
   // initialization and is ready to create browser windows.
   // Some APIs can only be used after this event occurs.
-  app.on('ready', createWindow)
-  
+  app.on('ready', function(){ 
+    createWindow()
+    const template = [{}]
+    const menu = Menu.buildFromTemplate(template)
+    Menu.setApplicationMenu(null)
+
+  }  
+)
+
   // Quit when all windows are closed.
   app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
@@ -65,3 +73,21 @@ const ipc = require('electron').ipcMain
     targetPriceVal = Number(arg);
     targetPrice.innerHTML = '$'+targetPriceVal.toLocaleString('en')
 })
+
+// sqlite tryouts
+ipc.on('MainWindowLoaded', function() {
+
+let db = new sqlite3.Database('userdata/navaadb.naa');
+ 
+let sql = `SELECT DISTINCT chapter FROM story
+         ORDER BY chapterorder`;
+        
+result.then(function(rows){
+  mainWindow.webContents.send("resultSent", rows);
+})
+// close the database connection
+db.close()
+})
+ 
+ 
+

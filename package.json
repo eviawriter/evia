@@ -1,19 +1,29 @@
 {
-  "name": "Evia Writer",
+  "name": "Evia-writer",
   "version": "0.0.1",
-  "description": "Writing is life",
+  "description": "Easy to use yet powerful writer for novels, thesis or large articles",
   "main": "main.js",
   "scripts": {
+    "rebuild": "electron-rebuild -f -w sqlite3",
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "install-apps-deps"
+    "postinstall": "install-apps-deps",
+    "dist": "build"
   },
-  "keywords": [],
-  "author": "",
+  "build": {
+    "appId": "io.snapcraft.quick-start",
+    "Linux": {
+      "target": ["snap"]
+    }
+  },
+  "keywords": ["writer, documents, thesis, novel"],
+  "author": "Johan Schutten",
   "license": "ISC",
   "devDependencies": {
     "electron": "^1.8.4",
-    "electron-builder": "^20.8.1",
+    "electron-builder": "^20.10.0",
+    "electron-packager": "^12.0.1",
+    "electron-rebuild": "^1.7.3",
     "electron-reload": "^1.2.2",
     "install": "^0.11.0",
     "npm": "^5.8.0"
