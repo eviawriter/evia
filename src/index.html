@@ -1,20 +1,9 @@
 <!DOCTYPE html>
   <html>
     <head>
-            <script>
-                    const electron = require("electron");
-                    const ipc = electron.ipcRenderer;
-                    document.addEventListener("DOMContentLoaded", function(){
-                        ipc.send("mainWindowLoaded")
-                        ipc.on("resultSent", function(evt, result){
-                            let resultEl = document.getElementById("chapters");
-                            console.log(result);
-                            for(var i = 0; i < result.length;i++){
-                                chaptersEl.innerHTML += "<h2>" + result[i].chapter.toString() + "</h2>";
-                            }
-                        });
-                    });
-                </script>
+        
+    <script src="../src/chapters.js"></script>
+    
       
       <link rel="stylesheet" href="../assets/css/main.css">
       <meta charset="UTF-8">
@@ -77,20 +66,20 @@
                     Main menu
                 </div>
    
-                <div id="chapters">
-                
+                <div class="chapters">
+                    <p id="chapters"></p>
                     <!-- <h2><a href="#">1. Balu de bruine beer</a></h2> -->
                     <div id="subchapter">
                         <ul>
-                            <li><a href="#">Een beer</a></li>
-                            <li><a href="#">Balu danst door het bos</a></li>
-                            <li><a href="#">Een groot gevaar</a></li>
-                            <li><a href="#">Een beer</a></li>
-                            <li><a href="#">Balu danst door het bos</a></li>
-                            <li><a href="#">Een groot gevaar</a></li>
-                            <li><a href="#">Een beer</a></li>
-                            <li><a href="#">Balu danst door het bos</a></li>
-                            <li><a href="#">Een groot gevaar</a></li>
+                            <li><a href="#">Een test</a></li>
+                            <li><a href="#">Balu test door het bos</a></li>
+                            <li><a href="#">Een test gevaar</a></li>
+                            <li><a href="#">Een test</a></li>
+                            <li><a href="#">Balu test door het bos</a></li>
+                            <li><a href="#">Een test gevaar</a></li>
+                            <li><a href="#">Een test</a></li>
+                            <li><a href="#">Balu test door het bos</a></li>
+                            <li><a href="#">Een test gevaar</a></li>
                         </ul>
                     </div>
                     
