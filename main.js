@@ -22,7 +22,7 @@ const sqlite3 = require('sqlite3').verbose();
   
 
     // Open the DevTools.
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools()
   
     // Emitted when the window is closed.
     win.on('closed', () => {
@@ -75,13 +75,23 @@ const sqlite3 = require('sqlite3').verbose();
 })
 
 // sqlite tryouts
-ipc.on('MainWindowLoaded', function() {
+ipc.on('itsloaded', function() {
 
-let db = new sqlite3.Database('userdata/navaadb.naa');
+let db = new sqlite3.Database('./userdata/navaadb.naa');
  
 let sql = `SELECT DISTINCT chapter FROM story
          ORDER BY chapterorder`;
-        
+
+         db.all(sql, [], (err, rows) => {
+          if (err) {
+            throw err;
+          }
+          rows.forEach((row) => {
+            console.log(row.name);
+          });
+        });         
+
+
 result.then(function(rows){
   mainWindow.webContents.send("resultSent", rows);
 })

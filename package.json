@@ -7,16 +7,20 @@
     "rebuild": "electron-rebuild -f -w sqlite3",
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "install-apps-deps",
+    "postinstall": "electron-builder install-apps-deps",
     "dist": "build"
   },
   "build": {
     "appId": "io.snapcraft.quick-start",
-    "Linux": {
-      "target": ["snap"]
+    "linux": {
+      "target": [
+        "snap"
+      ]
     }
   },
-  "keywords": ["writer, documents, thesis, novel"],
+  "keywords": [
+    "writer, documents, thesis, novel"
+  ],
   "author": "Johan Schutten",
   "license": "ISC",
   "devDependencies": {
